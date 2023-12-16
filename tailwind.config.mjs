@@ -8,6 +8,11 @@ export default {
 
 				"studio_feixen_sans": ["Studio Feixen Sans", "sans"]
 
+			},
+			colors: {
+
+				"body": "#1d1d1d"
+
 			}
 
 		}
