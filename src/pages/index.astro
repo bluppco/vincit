@@ -1,21 +1,17 @@
 ---
+// IMPORTING CUSTOM STYLES
 import "../styles/custom.css"
+
+// IMPORTING LAYOUTS
+import Layout from "../layouts/Layout.astro"
+
+// IMPORTING COMPONENTS
 import HeaderBanner from "../components/common/HeaderBanner.astro"
 import HomeCover from "../components/home/Cover.astro"
 import OurApproach from "../components/home/OurApproach.astro"
 ---
-
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<HeaderBanner />
-		<HomeCover />
-		<OurApproach/>
-	</body>
-</html>
+<Layout>
+	<HeaderBanner />
+	<HomeCover />
+	<OurApproach/>
+</Layout>
