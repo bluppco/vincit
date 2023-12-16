@@ -13,7 +13,13 @@
 \
 👨🏻‍💻 Work - Title, Description, Slug, Cover, Category, Details, Display on Home.
 \
-👨🏻‍💻 Blogs - Title, Tags, Cover.
+👨🏻‍💻 Blogs - Title, Slug, Tags, Cover, Is Active, Order, Date.
+\
+👨🏻‍💻 Services - Title, Slug, Description, Is Active, Order.
+\
+👨🏻‍💻 Meta Tags - Page, Slug, Title, Description, Is Active.
+\
+👨🏻‍💻 Authors - Name, Slug, Designation, Cover, Email, Is Active.
 
 ### Frontend consume API
 👨🏻‍💻 Home sections.
