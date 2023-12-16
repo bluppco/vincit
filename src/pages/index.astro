@@ -14,6 +14,7 @@ import OurWork from "../components/home/OurWork.astro"
 import TheVincitWay from "../components/common/TheVincitWay.astro"
 import Careers from "../components/home/Careers.astro"
 import Insights from "../components/home/Insights.astro"
+import OurPurpose from "../components/home/OurPurpose.astro"
 
 import { endpointFetch } from "../functions/endpoint"
 
@@ -33,5 +34,6 @@ const endpoint = endpointFetch( runtime.env.ENVIRONMENT )
 		<TheVincitWay />
 		<Careers />
 		<Insights />
+		<OurPurpose />
 	</Container>
 </Layout>
