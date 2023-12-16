@@ -1,0 +1,32 @@
+---
+// IMPORTING ATOMS
+import H4 from "../../atoms/H4.astro"
+import Button from "../../atoms/Button.astro"
+
+const {
+
+    src,
+    alt,
+    category,
+    title,
+    button_title,
+    href
+
+} = Astro.props
+---
+<div>
+    <a href={ href } class="space-y-4">
+        <div class="bg-zinc-200 w-full aspect-[2/3]">
+            <img
+                src={ src }
+                alt={ alt }
+                class=""
+            />
+        </div>
+        <p class="text-sm font-studio_feixen_sans">{ category }</p>
+        <H4>{ title }</H4>
+        <div class="pt-4">
+            <Button>{ button_title }</Button>
+        </div>
+    </a>
+</div>
