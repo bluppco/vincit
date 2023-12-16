@@ -1,0 +1,24 @@
+---
+// IMPORTING ATOMS
+import H3 from "../../atoms/H3.astro"
+
+const {
+
+    src,
+    alt,
+    title,
+    description
+
+} = Astro.props
+---
+<div class="space-y-4">
+    <div class="bg-zinc-200 w-20 aspect-square">
+        <img
+            src={ src }
+            alt={ alt }
+            class="w-full aspect-square"
+        />
+    </div>
+    <H3>{ title }</H3>
+    <p class="font-studio_feixen_sans text-xl text-body">{ description }</p>
+</div>

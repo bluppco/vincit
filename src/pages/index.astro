@@ -11,12 +11,23 @@ import HeaderBanner from "../components/common/HeaderBanner.astro"
 import HomeCover from "../components/home/Cover.astro"
 import OurApproach from "../components/home/OurApproach.astro"
 import OurWork from "../components/home/OurWork.astro"
+import TheVincitWay from "../components/common/TheVincitWay.astro"
+
+import { endpointFetch } from "../functions/endpoint"
+
+const runtime = Astro.locals.runtime;
+const endpoint = endpointFetch( runtime.env.ENVIRONMENT )
+
+// const data = await fetch( endpoint + "/home" )
+// const data_json = await data.json()
+// const home = data_json.data
 ---
 <Layout>
+	<HeaderBanner />
 	<Container>
-		<HeaderBanner />
 		<HomeCover />
 		<OurApproach/>
 		<OurWork />
+		<TheVincitWay />
 	</Container>
 </Layout>
