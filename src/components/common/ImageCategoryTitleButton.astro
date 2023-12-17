@@ -23,7 +23,17 @@ const {
                 class="w-full h-full"
             />
         </div>
-        <p class="text-sm font-studio_feixen_sans">{ category }</p>
+            {
+
+                category.map( ( item ) => {
+
+                    return(
+                        <p class="text-sm font-studio_feixen_sans">{ item }</p>
+                    )
+
+                })
+
+            }
         <H4>{ title }</H4>
         <div class="pt-4">
             <Button>{ button_title }</Button>

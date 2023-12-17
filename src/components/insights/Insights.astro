@@ -4,33 +4,29 @@ import Button from "../../atoms/Button.astro"
 
 // IMPORTING COMPONENTS
 import ImageCategoryTitleButton from "../common/ImageCategoryTitleButton.astro"
+
+const { data } = Astro.props
 ---
 <section class="pt-20">
     <div class="grid grid-cols-3 gap-6 pt-4">
-        <ImageCategoryTitleButton
-            src=""
-            alt=""
-            category="Artificial Intelligence"
-            title="Here’s 7 easy ways you can start using generative AI at work now"
-            button_title="Read more"
-            href=""
-        />
-        <ImageCategoryTitleButton
-            src=""
-            alt=""
-            category="Artificial Intelligence"
-            title="Here’s 7 easy ways you can start using generative AI at work now"
-            button_title="Read more"
-            href=""
-        />
-        <ImageCategoryTitleButton
-            src=""
-            alt=""
-            category="Artificial Intelligence"
-            title="Here’s 7 easy ways you can start using generative AI at work now"
-            button_title="Read more"
-            href=""
-        />
+        {
+
+            data.map( ( item ) => {
+
+                return(
+                    <ImageCategoryTitleButton
+                        src={ item.cover }
+                        alt={ item.title }
+                        category={ item.tags }
+                        title={ item.title }
+                        button_title="Read more"
+                        href={ item.slug }
+                    />
+                )
+
+            })
+
+        }
     </div>
     <div class="flex justify-center pt-20">
         <Button>load more posts</Button>
