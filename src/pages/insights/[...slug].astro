@@ -13,16 +13,27 @@ import MoreInsights from "../../components/insights/slug/MoreInsights.astro"
 import Masthead from "../../components/insights/slug/Masthead.astro"
 import Description from "../../components/insights/slug/Description.astro"
 import Image from "../../components/insights/slug/Image.astro"
+
+import { endpointFetch } from "../../functions/endpoint"
+
+const runtime = Astro.locals.runtime;
+const endpoint = endpointFetch( runtime.env.ENVIRONMENT )
+
+const { slug } = Astro.params
+
+const data = await fetch( endpoint + "/blog/" + slug )
+const data_json = await data.json()
+const insight = data_json.data
 ---
 <Layout>
 	<section class="flex flex-col h-screen max-h-screen overflow-hidden">
 		<HeaderBanner />
-		<Masthead />
+		<Masthead data={ insight } />
 	</section>
 	<Container>
 		<Description />
 		<Image />
-        <Insight />
+        <Insight data={ insight } />
 		<MoreInsights />
 	</Container>
 </Layout>
