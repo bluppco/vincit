@@ -1,0 +1,28 @@
+---
+// IMPORTING CUSTOM STYLES
+import "../../styles/custom.css"
+
+// IMPORTING LAYOUTS
+import Layout from "../../layouts/Layout.astro"
+import Container from "../../layouts/Container.astro"
+
+// IMPORTING COMPONENTS
+import HeaderBanner from "../../components/common/HeaderBanner.astro"
+import Insight from "../../components/insights/slug/Insight.astro"
+import MoreInsights from "../../components/insights/slug/MoreInsights.astro"
+import Masthead from "../../components/insights/slug/Masthead.astro"
+import Description from "../../components/insights/slug/Description.astro"
+import Image from "../../components/insights/slug/Image.astro"
+---
+<Layout>
+	<section class="flex flex-col h-screen max-h-screen overflow-hidden">
+		<HeaderBanner />
+		<Masthead />
+	</section>
+	<Container>
+		<Description />
+		<Image />
+        <Insight />
+		<MoreInsights />
+	</Container>
+</Layout>
