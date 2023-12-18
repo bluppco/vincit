@@ -4,6 +4,22 @@ export default {
 	theme: {
 		extend: {
 
+			animation: {
+
+				marquee: 'marquee 20s linear infinite'
+
+			},
+
+			keyframes: {
+
+				marquee: {
+
+				  	'0%': { transform: 'translateX(0%)' },
+				  	'100%': { transform: 'translateX(-100%)' }
+
+				}
+			},
+
 			screens: {
 
 				'sm': '640px',
@@ -20,9 +36,11 @@ export default {
 				"studio_feixen_sans": ["Studio Feixen Sans", "sans"]
 
 			},
+
 			colors: {
 
-				"body": "#1d1d1d"
+				"body": "#1d1d1d",
+				"vincit_pink" : "#FFCAFF"
 
 			}
 

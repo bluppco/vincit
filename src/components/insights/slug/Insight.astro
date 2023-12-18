@@ -1,0 +1,31 @@
+---
+import { marked } from 'marked'
+
+const { data } = Astro.props
+---
+<section class="grid grid-cols-2">
+    <div>
+        <p class="text-2xl font-studio_feixen_sans">Here’s how:</p>
+    </div>
+    <div>
+        <div class="marked">
+            <p set:html={ marked.parse( data.md ) } class="marked" />
+        </div>
+        <div class="flex gap-6 pt-80">
+            <div class="bg-zinc-200 w-40 aspect-square">
+                <img
+                    src=""
+                    alt=""
+                    class="w-full h-full"
+                />
+            </div>
+            <div class="flex flex-col justify-between">
+                <div>
+                    <p class="font-studio_feixen_sans text-lg">Jonne Sjöholm,</p>
+                    <p>Data Architect</p>
+                </div>
+                <p>jonne.sjoholm@vincit.com</p>
+            </div>
+        </div>
+    </div>
+</section>

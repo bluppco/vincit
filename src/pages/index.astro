@@ -11,12 +11,33 @@ import HeaderBanner from "../components/common/HeaderBanner.astro"
 import HomeCover from "../components/home/Cover.astro"
 import OurApproach from "../components/home/OurApproach.astro"
 import OurWork from "../components/home/OurWork.astro"
+import TheVincitWay from "../components/common/TheVincitWay.astro"
+import Careers from "../components/home/Careers.astro"
+import Insights from "../components/home/Insights.astro"
+import OurPurpose from "../components/home/OurPurpose.astro"
+import Marquee from "../components/home/Marquee.astro"
+
+import { endpointFetch } from "../functions/endpoint"
+
+const runtime = Astro.locals.runtime;
+const endpoint = endpointFetch( runtime.env.ENVIRONMENT )
+
+// const data = await fetch( endpoint + "/home" )
+// const data_json = await data.json()
+// const home = data_json.data
 ---
 <Layout>
+	<HeaderBanner />
 	<Container>
-		<HeaderBanner />
 		<HomeCover />
 		<OurApproach/>
+	</Container>
+	<Marquee />
+	<Container>
 		<OurWork />
+		<TheVincitWay />
+		<Careers />
+		<Insights />
+		<OurPurpose />
 	</Container>
 </Layout>

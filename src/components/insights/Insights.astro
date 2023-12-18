@@ -1,0 +1,34 @@
+---
+// IMPORTING ATOMS
+import Button from "../../atoms/Button.astro"
+
+// IMPORTING COMPONENTS
+import ImageCategoryTitleButton from "../common/ImageCategoryTitleButton.astro"
+
+const { data } = Astro.props
+---
+<section class="pt-20">
+    <div class="grid grid-cols-3 gap-6 pt-4">
+        {
+
+            data.map( ( item ) => {
+
+                return(
+                    <ImageCategoryTitleButton
+                        src={ item.cover }
+                        alt={ item.title }
+                        category={ item.tags }
+                        title={ item.title }
+                        button_title="Read more"
+                        href={ item.slug }
+                    />
+                )
+
+            })
+
+        }
+    </div>
+    <div class="flex justify-center pt-20">
+        <Button>load more posts</Button>
+    </div>
+</section>

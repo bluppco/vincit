@@ -1,0 +1,22 @@
+---
+// IMPORTING CONSTANTS
+import { CDN_LINK, IMAGE_QUALITY } from "../../../constants/cdn"
+
+const { data } = Astro.props
+---
+<section class="grid grid-cols-2">
+    <div class="w-full aspect-square overflow-hidden bg-zinc-200">
+        <img
+            src={ CDN_LINK + data.cover + "?quality=" + IMAGE_QUALITY }
+            alt=""
+            class="w-full h-full object-cover"
+        />
+    </div>
+    <div class="bg-vincit_pink flex flex-col gap-6 justify-center items-center p-20">
+        <div class="border rounded-full border-black h-10 px-4 flex items-center justify-center">
+            <p class="text-sm">Artificial Intelligence</p>
+        </div>
+        <p class="text-5xl text-center">{ data.title }</p>
+        <p>{ data.date }</p>
+    </div>
+</section>

@@ -1,0 +1,29 @@
+---
+// IMPORTING CUSTOM STYLES
+import "../../styles/custom.css"
+
+// IMPORTING LAYOUTS
+import Layout from "../../layouts/Layout.astro"
+import Container from "../../layouts/Container.astro"
+
+// IMPORTING COMPONENTS
+import HeaderBanner from "../../components/common/HeaderBanner.astro"
+import Insights from "../../components/insights/Insights.astro"
+import Masthead from "../../components/insights/Masthead.astro"
+
+import { endpointFetch } from "../../functions/endpoint"
+
+const runtime = Astro.locals.runtime;
+const endpoint = endpointFetch( runtime.env.ENVIRONMENT )
+
+const data = await fetch( endpoint + "/blog" )
+const data_json = await data.json()
+const insights = data_json.data
+---
+<Layout>
+	<HeaderBanner />
+	<Container>
+        <Masthead />
+        <Insights data={ insights } />
+	</Container>
+</Layout>

@@ -1,0 +1,40 @@
+---
+// IMPORTING ATOMS
+import Button from "../../atoms/Button.astro"
+import H2 from "../../atoms/H2.astro"
+
+// IMPORTING COMPONENTS
+import ImageCategoryTitleButton from "../common/ImageCategoryTitleButton.astro"
+---
+<section class="pt-20">
+    <H2>Insights</H2>
+    <div class="grid grid-cols-3 gap-4 pt-4">
+        <ImageCategoryTitleButton
+            src=""
+            alt=""
+            category="Artificial Intelligence"
+            title="Here’s 7 easy ways you can start using generative AI at work now"
+            button_title="Read more"
+            href=""
+        />
+        <ImageCategoryTitleButton
+            src=""
+            alt=""
+            category="Artificial Intelligence"
+            title="Here’s 7 easy ways you can start using generative AI at work now"
+            button_title="Read more"
+            href=""
+        />
+        <ImageCategoryTitleButton
+            src=""
+            alt=""
+            category="Artificial Intelligence"
+            title="Here’s 7 easy ways you can start using generative AI at work now"
+            button_title="Read more"
+            href=""
+        />
+    </div>
+    <div class="flex justify-center pt-10">
+        <Button href="/insights">More Insights</Button>
+    </div>
+</section>
