@@ -40,7 +40,8 @@ export default {
 			colors: {
 
 				"body": "#1d1d1d",
-				"vincit_pink" : "#FFCAFF"
+				"vincit_pink": "#FFCAFF",
+				"vincit_red": "#e83520",
 
 			}
 
