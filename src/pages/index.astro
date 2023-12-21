@@ -17,6 +17,7 @@ import Careers from "../components/home/Careers.astro"
 import Insights from "../components/home/Insights.astro"
 import OurPurpose from "../components/home/OurPurpose.astro"
 import Marquee from "../components/home/Marquee.astro"
+import Footer from "../components/footer/Footer.astro"
 
 import { endpointFetch } from "../functions/endpoint"
 
@@ -42,4 +43,5 @@ const endpoint = endpointFetch( runtime.env.ENVIRONMENT )
 		<Insights />
 		<OurPurpose />
 	</Container>
+	<Footer />
 </Layout>

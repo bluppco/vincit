@@ -1,0 +1,22 @@
+---
+// IMPORTING ATOMS
+import H6 from "../../atoms/H6.astro"
+
+// IMPORTING COMPONENTS
+import FooterItem from "./FooterItem.astro"
+
+const { country, contact_number, email } = Astro.props
+---
+<div class="space-y-4">
+    <H6>{ country }</H6>
+    <div>
+        <FooterItem
+            title={ contact_number }
+            href={ "tel:" + contact_number }
+        />
+        <FooterItem
+            title={ email }
+            href={ "mailto:" + email }
+        />
+    </div>
+</div>
