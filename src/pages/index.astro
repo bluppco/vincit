@@ -1,4 +1,29 @@
 ---
+import { endpointFetch } from "../functions/endpoint"
+
+const runtime = Astro.locals.runtime;
+const endpoint = endpointFetch( runtime.env.ENVIRONMENT )
+
+// NETWORK CALL TO GET DATA
+const network_data = await fetch( endpoint + "/home" )
+const data_json = await network_data.json()
+
+const { data } = data_json
+
+// HOME PROPS
+let our_approach = null
+let our_purpose = null
+
+data.map( ( data ) => {
+
+	if( data.slug === "our-approach" )
+        our_approach = data
+	else if ( data.slug === "our-purpose" )
+		our_purpose = data
+
+})
+
+
 // IMPORTING CUSTOM STYLES
 import "../styles/custom.css"
 
@@ -7,6 +32,7 @@ import Layout from "../layouts/Layout.astro"
 import Container from "../layouts/Container.astro"
 
 // IMPORTING COMPONENTS
+import Header from "../components/header/Header"
 import HeaderBanner from "../components/common/HeaderBanner.astro"
 import HomeCover from "../components/home/Cover.astro"
 import OurApproach from "../components/home/OurApproach.astro"
@@ -16,21 +42,14 @@ import Careers from "../components/home/Careers.astro"
 import Insights from "../components/home/Insights.astro"
 import OurPurpose from "../components/home/OurPurpose.astro"
 import Marquee from "../components/home/Marquee.astro"
-
-import { endpointFetch } from "../functions/endpoint"
-
-const runtime = Astro.locals.runtime;
-const endpoint = endpointFetch( runtime.env.ENVIRONMENT )
-
-// const data = await fetch( endpoint + "/home" )
-// const data_json = await data.json()
-// const home = data_json.data
+import Footer from "../components/footer/Footer.astro"
 ---
 <Layout>
 	<HeaderBanner />
+	<Header client:load />
 	<Container>
 		<HomeCover />
-		<OurApproach/>
+		<OurApproach data={ our_approach } />
 	</Container>
 	<Marquee />
 	<Container>
@@ -38,6 +57,7 @@ const endpoint = endpointFetch( runtime.env.ENVIRONMENT )
 		<TheVincitWay />
 		<Careers />
 		<Insights />
-		<OurPurpose />
+		<OurPurpose data={ our_purpose } />
 	</Container>
+	<Footer />
 </Layout>

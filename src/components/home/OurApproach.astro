@@ -1,8 +1,11 @@
+---
+const { data } = Astro.props
+---
 <section class="grid grid-cols-3">
     <div class="p-4">
-        <h4 class="font-studio_feixen_sans text-xl font-semibold">Our approach</h4>
+        <h4 class="font-studio_feixen_sans text-xl font-semibold">{ data.title }</h4>
     </div>
     <div class="col-span-2 p-4">
-        <p class="font-studio_feixen_sans text-4xl">We’re here to get you where you want to go and beyond. Digital shouldn’t be done just for the sake of digital, but because it’s one of the most important ways to drive your business forward. Forget all the buzzwords and hype, let us help you succeed.</p>
+        <p class="font-studio_feixen_sans text-4xl">{ data.description }</p>
     </div>
 </section>
